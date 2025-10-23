@@ -1,20 +1,12 @@
 /*
-You are given a string s consisting of lowercase English letters ('a' to 'z').
+Runtime 21 ms
+Beats 5.11%
 
-Your task is to:
+Memory 10.41 MB
+Beats 9.68%
 
-Find the vowel (one of 'a', 'e', 'i', 'o', or 'u') with the maximum frequency.
-Find the consonant (all other letters excluding vowels) with the maximum frequency.
-Return the sum of the two frequencies.
+The code still needs improvement in both runtime and memory space 
 
-Note: If multiple vowels or consonants have the same maximum frequency, you may choose any one of them. If there are no vowels or no consonants in the string, consider their frequency as 0.
-
-The frequency of a letter x is the number of times it occurs in the string.
- 
-Constraints:
-
-1 <= s.length <= 100
-s consists of lowercase English letters only.
 */
 
 class Solution {
@@ -34,8 +26,8 @@ public:
         //starting while loop to traverse the given String s
         int i=0;
         while(i < s.length()){
-            //this code is to itterate through the map to see if the letter is present if it is ++
-            //if the letter is not found in vowels it will then check cons if is then ++
+            //this code is to iterate through the map to see if the letter is present, if it is ++
+            //if the letter is not found in vowels, it will then check cons if it is then ++
             if(vowels.find(s[i])!=vowels.end()){
                 cout << vowels.at(s[i]) << endl;
                 vowels.at(s[i]) = vowels.at(s[i]) +1;
@@ -50,7 +42,7 @@ public:
             }
             i++;
         }
-        //this will itterate to find the biggest vowel and biggest const then add them in the return
+        //this will iterate to find the biggest vowel and biggest consonant, then add them in the return
         for(auto& [key, value]: vowels){
             if(vMax < value){
                 vMax= value;
